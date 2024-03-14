@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./src/pedido.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./media-queries.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        
+    <!-- Valor Final --> 
+    <h1><img src="./src/pedido.png"> Lista de Compras</h1> 
+
+    <!-- define os limites de gastos --> 
+    <div id="carteira">
+        <img src="./src/cofrinho.png" alt="Cofrinho">
+            <label id="maximo" for="carteira">Qual é o seu limite de gastos?</label>
+                <img src="./src/real-brasileiro.png" alt="">
+                    <input type="number" id="limite" placeholder="0,00 R$" onchange="setBudget()">
+                        </div>
+     
+    <!-- Adiciona os itens/produtos -->                     
+    <form id="form" onsubmit="addItem(); return false;">
+        <img src="./src/cesta-de-compras.png" alt="">
+            <input type="text" id="product" placeholder="Produto" minlength="1">
+                <div id="error-message" class="error-message" style="display: none;"></div>
+                    <button id="adicionar" type="submit"><i class="bi bi-plus-circle-fill"></i></button>
+                        </form>
+    <!-- Lista --> 
+    <ul id="shoppingList"></ul>
+    
+    <!-- botões com funções --> 
+    <div id="opcoes">
+        <button id="salvar" type="button" onclick="saveShoppingList()"><i class="bi bi-floppy2"></i> Salvar Lista</button>
+            <button id="calcular" type="button" onclick="calculateTotal()"><i class="bi bi-calculator-fill"></i> Calcular</button>
+                <button id="compartilhar" type="button" onclick="openModal()"><i class="bi bi-share-fill"></i> Compartilhar</button>
+                    </div>
+
+    <!-- Modal de compartilhar -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Compartilhar em:</h2>
+                    <button id="compartilharInstagram" onclick="compartilharInstagram()"><i class="bi bi-instagram"></i> Instagram</button>
+                        <button id="compartilharWhatsApp" onclick="compartilharWhatsApp()"><i class="bi bi-whatsapp"></i> WhatsApp</button>
+                            </div>
+                                </div>
+
+    <!-- Confirma que foi salvo --> 
+    <div id="mensagemsave" class="mensagemsave" style="display: none;"></div>
+    <!-- Confirma que o calculo foi feito --> 
+    <div id="mensagemcalculo" class="mensagemcalculo" style="display: none;"></div>
+    <!-- Alerta de quando foi ultrapassado o valor definido --> 
+    <div id="alertMessage" class="alert" style="display: none;">
+        <span id="closeAlert" onclick="hideAlert()">&times;</span>
+            </div>
+        
+    <!-- Valor Final -->        
+    <div id="total"></div>
+
+    <!-- Instruções --> 
+    <div>
+        <button type="button" id="btnInstrucoes" onclick="showInstructions()">Como Usar ?</button>
+            </div>
+                <div id="instrucoes" class="instrucoes">
+                    <button type="button" class="close" onclick="closeInstructions()">
+                        <i class="bi bi-x-octagon-fill" onclick="closeInstructions()"></i> Fechar
+                            </button>
+                                <h2>Instruções de Uso</h2>
+                                 <p>1. Defina o limite de gastos em Reais (R$).</p>
+                                  <p>2. Para adicionar um produto, insira o nome e clique no botão "+".</p>
+                                   <p>3. Informe o preço e a quantidade do produto e clique em "Marcar como comprado".</p>
+                                    <p>4. Itens marcados <span style="color: red;">vermelho</span> não foram colocados no carrinho.</p>
+                                     <p>5. Itens marcados <span style="color: green;">verde</span> foram adicionados no carrinho.</p>
+                                      <p>6. Para calcular o total, clique em "Calcular". Você será avisado se o total exceder o limite de gastos.</p>
+                                       <p>7. Lembre-se que o cálculo incluirá apenas os itens marcados como adicionados ao carrinho.</p>
+                                        <p>8. Clique em "Salvar Lista" para acessá-la posteriormente.</p>
+                                         <p>9. Para compartilhar sua lista de compras, clique no botão "Compartilhar". Você poderá compartilhar no Instagram ou WhatsApp.</p>
+                                          </div>
+                                           </div>
+
+    <footer>
+        <p>Copyright © 2024 by Kevyn Mendes | all rights Reserved.</p>
+            </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
