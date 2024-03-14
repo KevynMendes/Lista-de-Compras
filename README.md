@@ -26,6 +26,15 @@ Este é um aplicativo simples para criar e gerenciar uma lista de compras. Você
 
 Você pode conferir uma versão de demonstração [aqui](https://kevynmendes.github.io/Lista-de-Compras/).
 
+## Responsividade para Dispositivos Móveis
+
+Este aplicativo foi desenvolvido com design responsivo, garantindo uma experiência de usuário consistente em uma variedade de dispositivos, incluindo smartphones e tablets. Ele se adapta automaticamente a diferentes tamanhos de tela e orientações, proporcionando facilidade de uso e acessibilidade em qualquer dispositivo.
+
+## Exemplo de Uso em Dispositivos Móveis
+
+<img src="https://github.com/KevynMendes/Lista-de-Compras/assets/156138743/2a8dec1a-114d-4817-92d5-298c3651cb7f" width="400" height="600"><img src="https://github.com/KevynMendes/Lista-de-Compras/assets/156138743/85673b5e-6054-47ac-a2da-5dea13fb09d8" width="400" height="600">
+
+
 ## Tecnologias Utilizadas
 
 - HTML
